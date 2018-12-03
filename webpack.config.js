@@ -5,7 +5,7 @@ module.exports = {
     entry: {
         app: './src/index.js',
         appStyles: [
-            './src/mystyle.css',
+            './src/mystyle.scss',
         ],
         vendor: [
             '@babel/polyfill',
@@ -43,6 +43,15 @@ module.exports = {
                     {
                         loader: 'css-loader',
                     }
+                ]
+            },
+            {
+                test: /\.scss$/,
+                exclude: /node_modules/,
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    "css-loader",
+                    "sass-loader",
                 ]
             },
             {
