@@ -1,0 +1,25 @@
+{
+  "name": "wpexerciseslemoncode",
+  "version": "1.0.0",
+  "description": "Webpack exercises for Master Front-End Lemoncode V",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sermmor/WebpackExercisesMFEV.git"
+  },
+  "keywords": [
+    "webpack",
+    "typescript",
+    "SASS",
+    "React"
+  ],
+  "author": "Sergio Martín",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sermmor/WebpackExercisesMFEV/issues"
+  },
+  "homepage": "https://github.com/sermmor/WebpackExercisesMFEV#readme"
+}
