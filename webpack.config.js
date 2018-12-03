@@ -1,4 +1,5 @@
-var HtmlWebpackPlugin = require('html-webpack-plugin')
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+var MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
     entry: {
@@ -10,13 +11,20 @@ module.exports = {
             '@babel/polyfill',
         ]
     },
-    /*entry: [
-        '@babel/polyfill',
-        './src/index.js',
-        './src/mystyle.css',
-    ],*/
     output: {
-        filename: '[name].bundle.js'
+        filename: '[name].[chunkhash].bundle.js'
+    },
+    optimization: {
+        splitChunks: {
+            cacheGroups: {
+                vendor: {
+                    chunks: 'initial',
+                    name: 'vendor',
+                    test: 'vendor',
+                    enforce: true,
+                }
+            }
+        }
     },
     module: {
         rules: [
@@ -30,7 +38,7 @@ module.exports = {
                 exclude: /node_modules/,
                 use: [
                     {
-                        loader: 'style-loader',
+                        loader: MiniCssExtractPlugin.loader,
                     },
                     {
                         loader: 'css-loader',
@@ -49,7 +57,10 @@ module.exports = {
         new HtmlWebpackPlugin({
             filename: 'index.html',
             template: 'src/index.html',
-            hash:true,
+        }),
+        new MiniCssExtractPlugin({
+            filename: "[name].css",
+            chunkFilename: "[id].css",
         })
     ]
 }
