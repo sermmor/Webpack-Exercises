@@ -55,6 +55,11 @@ module.exports = {
                 ]
             },
             {
+                test: /\.(png|jpg)$/,
+                exclude: /node_modules/,
+                loader: 'file-loader',
+            },
+            {
                 test: /\.ts$/,
                 exclude: /node_modules/,
                 loader: 'babel-loader',
