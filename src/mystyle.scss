@@ -1,8 +1,11 @@
 $main-color: teal;
+$main-font-color: whitesmoke;
 $images-width: 200px;
 
 .main-background {
     background-color: $main-color;
+    color: $main-font-color;
+    font-size: 140%;
 }
 
 img {
