@@ -1,0 +1,11 @@
+$main-color: teal;
+$images-width: 200px;
+
+.main-background {
+    background-color: $main-color;
+}
+
+img {
+    display: block;
+    width: $images-width;
+}

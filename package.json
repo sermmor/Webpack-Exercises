@@ -1,0 +1,50 @@
+{
+  "name": "wpexerciseslemoncode",
+  "version": "1.0.0",
+  "description": "Webpack exercises for Master Front-End Lemoncode V",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --watch webpack.config.js --exec webpack-dev-server --mode development --open",
+    "build": "rimraf dist && webpack --mode development",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sermmor/WebpackExercisesMFEV.git"
+  },
+  "keywords": [
+    "webpack",
+    "typescript",
+    "SASS",
+    "React"
+  ],
+  "author": "Sergio Martín",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sermmor/WebpackExercisesMFEV/issues"
+  },
+  "homepage": "https://github.com/sermmor/WebpackExercisesMFEV#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.1.5",
+    "@babel/core": "^7.1.6",
+    "@babel/polyfill": "^7.0.0",
+    "@babel/preset-env": "^7.1.6",
+    "@types/node": "^10.12.12",
+    "awesome-typescript-loader": "^5.2.1",
+    "babel-loader": "^8.0.4",
+    "css-loader": "^1.0.1",
+    "file-loader": "^2.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.4.5",
+    "node-sass": "^4.10.0",
+    "nodemon": "^1.18.7",
+    "rimraf": "^2.6.2",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "typescript": "^3.2.1",
+    "url-loader": "^1.1.2",
+    "webpack": "^4.26.1",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.10"
+  }
+}
