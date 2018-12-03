@@ -2,8 +2,12 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
+    resolve:{
+        extensions: ['.js', '.ts']
+    },
+    devtool: 'inline-source-map',
     entry: {
-        app: './src/index.js',
+        app: './src/index.ts',
         appStyles: [
             './src/mystyle.scss',
         ],
@@ -28,6 +32,15 @@ module.exports = {
     },
     module: {
         rules: [
+            {
+                test: /\.(ts|tsx)$/,
+                exclude: /node_modules/,
+                loader: 'awesome-typescript-loader',
+                options: {
+                    useBabel: true,
+                    "babelCore": "@babel/core",
+                }
+            },
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
@@ -58,11 +71,6 @@ module.exports = {
                 test: /\.(png|jpg)$/,
                 exclude: /node_modules/,
                 loader: 'file-loader',
-            },
-            {
-                test: /\.ts$/,
-                exclude: /node_modules/,
-                loader: 'babel-loader',
             }
         ]
     },
